@@ -1,0 +1,2 @@
+# Device Extras
+user=system seinfo=platform isPrivApp=true name=org.neoteric.device.DeviceExtras domain=device_extras type=system_app_data_file levelFrom=all
