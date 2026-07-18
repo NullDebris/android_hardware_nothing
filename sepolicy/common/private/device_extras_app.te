@@ -1,0 +1,48 @@
+define(`extra_app_services', `
+allow $1 {
+  activity_service
+  activity_task_service
+  audio_service
+  audioserver_service
+  autofill_service
+  batteryproperties_service
+  batterystats_service
+  content_capture_service
+  game_service
+  gpu_service
+  hint_service
+  media_session_service
+  netstats_service
+  sensorservice_service
+  surfaceflinger_service
+  uimode_service
+  voiceinteraction_service
+  vibrator_manager_service
+}:service_manager find;
+')
+
+# ---------------------------------------------------------------------------
+# extra_app_domain(domain_name)
+# For a regular (non-priv) system app.
+# ---------------------------------------------------------------------------
+define(`extra_app_domain', `
+app_domain($1)
+
+extra_app_services($1)
+
+allow $1 system_app_data_file:dir create_dir_perms;
+allow $1 system_app_data_file:{ file lnk_file } create_file_perms;
+')
+
+# ---------------------------------------------------------------------------
+# extra_privapp_domain(domain_name)
+# For a privileged app (signed/priv-app).
+# ---------------------------------------------------------------------------
+define(`extra_privapp_domain', `
+app_domain($1)
+
+extra_app_services($1)
+
+allow $1 privapp_data_file:dir create_dir_perms;
+allow $1 privapp_data_file:{ file lnk_file } create_file_perms;
+')
