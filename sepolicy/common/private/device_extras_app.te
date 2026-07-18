@@ -13,6 +13,7 @@ allow $1 {
   hint_service
   media_session_service
   netstats_service
+  sensitive_content_protection_service
   sensorservice_service
   surfaceflinger_service
   uimode_service
