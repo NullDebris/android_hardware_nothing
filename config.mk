@@ -10,6 +10,10 @@ ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
 BOARD_VENDOR_SEPOLICY_DIRS += $(HW_NOTHING_PATH)/sepolicy/qcom/vendor
 endif
 
+ifneq ($(filter vendor.lineage.health-service.default ,$(PRODUCT_PACKAGES)),)
+BOARD_VENDOR_SEPOLICY_DIRS += $(HW_NOTHING_PATH)/sepolicy/lineage/health
+endif
+
 ifneq ($(filter NothingEsimSwitcher ,$(PRODUCT_PACKAGES)),)
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(HW_NOTHING_PATH)/sepolicy/esimswitcher/private
 endif
