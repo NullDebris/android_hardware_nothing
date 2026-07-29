@@ -6,6 +6,10 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(HW_NOTHING_PATH)/sepolicy/common/private
 BOARD_VENDOR_SEPOLICY_DIRS += $(HW_NOTHING_PATH)/sepolicy/common/vendor
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(HW_NOTHING_PATH)/sepolicy/common/public
 
+ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
+BOARD_VENDOR_SEPOLICY_DIRS += $(HW_NOTHING_PATH)/sepolicy/qcom/vendor
+endif
+
 ifneq ($(filter NothingEsimSwitcher ,$(PRODUCT_PACKAGES)),)
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(HW_NOTHING_PATH)/sepolicy/esimswitcher/private
 endif

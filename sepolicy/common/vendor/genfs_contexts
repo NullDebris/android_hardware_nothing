@@ -1,0 +1,2 @@
+# Fingerprint
+genfscon proc /touchpanel/fod_mode         u:object_r:vendor_proc_fingerprint:s0
