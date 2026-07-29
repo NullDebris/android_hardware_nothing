@@ -3,3 +3,12 @@ type vendor_proc_display, fs_type, proc_type;
 
 # Fingerprint
 type vendor_proc_fingerprint, fs_type, proc_type;
+
+# LEDs
+type vendor_sysfs_leds, fs_type, sysfs_type;
+
+# Vibrator
+type vendor_sysfs_vibrator, fs_type, sysfs_type;
+
+# Walt
+type proc_sched_walt, fs_type, proc_type;
