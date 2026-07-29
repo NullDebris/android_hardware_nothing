@@ -7,6 +7,9 @@ type vendor_proc_display, fs_type, proc_type;
 # Fingerprint
 type vendor_proc_fingerprint, fs_type, proc_type;
 
+# NTF
+type vendor_ntf_file, file_type, dev_type;
+
 # LEDs
 type vendor_sysfs_leds, fs_type, sysfs_type;
 
