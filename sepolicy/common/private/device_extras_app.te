@@ -36,6 +36,17 @@ allow $1 system_app_data_file:{ file lnk_file } create_file_perms;
 ')
 
 # ---------------------------------------------------------------------------
+# extra_system_uid_app_domain(domain_name)
+# For a regular (non-priv) system app running as UID 1000.
+# ---------------------------------------------------------------------------
+define(`extra_system_uid_app_domain', `
+
+typeattribute $1 mlstrustedsubject;
+extra_app_domain($1)
+
+')
+
+# ---------------------------------------------------------------------------
 # extra_privapp_domain(domain_name)
 # For a privileged app (signed/priv-app).
 # ---------------------------------------------------------------------------
@@ -46,4 +57,15 @@ extra_app_services($1)
 
 allow $1 privapp_data_file:dir create_dir_perms;
 allow $1 privapp_data_file:{ file lnk_file } create_file_perms;
+')
+
+# ---------------------------------------------------------------------------
+# extra_system_uid_privapp_domain(domain_name)
+# For a privileged app (signed/priv-app) running as UID 1000.
+# ---------------------------------------------------------------------------
+define(`extra_system_uid_privapp_domain', `
+
+typeattribute $1 mlstrustedsubject;
+extra_privapp_domain($1)
+
 ')

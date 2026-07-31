@@ -1,3 +1,1 @@
-typeattribute device_extras mlstrustedsubject;
-
-extra_app_domain(device_extras)
+extra_system_uid_app_domain(device_extras)
