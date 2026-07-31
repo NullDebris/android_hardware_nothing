@@ -1,2 +1,2 @@
-get_prop(init, vendor_vibrator_prop)
-set_prop(init, vendor_vibrator_prop)
+get_prop(vendor_init, vendor_vibrator_prop)
+set_prop(vendor_init, vendor_vibrator_prop)
