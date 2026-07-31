@@ -1,0 +1,2 @@
+get_prop(init, vendor_vibrator_prop)
+set_prop(init, vendor_vibrator_prop)
