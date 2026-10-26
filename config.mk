@@ -10,6 +10,8 @@ ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
 BOARD_VENDOR_SEPOLICY_DIRS += $(HW_NOTHING_PATH)/sepolicy/qcom/vendor
 endif
 
+$(call soong_config_set,camera,package_name,com.nothing.device.package_name)
+
 ifneq ($(filter vendor.lineage.health-service.default ,$(PRODUCT_PACKAGES)),)
 $(call soong_config_set,lineage_health,charging_control_charging_path,/proc/charger/usb_charger_en)
 BOARD_VENDOR_SEPOLICY_DIRS += $(HW_NOTHING_PATH)/sepolicy/lineage/health
